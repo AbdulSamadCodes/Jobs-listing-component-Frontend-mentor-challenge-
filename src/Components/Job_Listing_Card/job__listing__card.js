@@ -1,4 +1,4 @@
-import { Component } from "/src/Components/component.js";
+import { Component } from "/src/Components/components.js";
 import { CardLogo } from "/src/Components/Job_Listing_Card/card__logo.js";
 
 class JobListingCard extends Component {

@@ -1,4 +1,4 @@
-import { Component } from "/src/Components/component.js";
+import { Component } from "/src/Components/components.js";
 
 export class CardLogo extends Component {
   constructor(elementName, className, imgSrc) {
