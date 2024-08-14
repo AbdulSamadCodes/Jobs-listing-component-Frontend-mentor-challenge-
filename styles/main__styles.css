@@ -1,0 +1,58 @@
+/* custom properties */
+:root {
+  /* spacings */
+  --main-container-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
+  --jobs-listing-card-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
+
+  /* widths */
+  --main-container-max-width:350px;
+  --card-logo-width:60px;
+
+  /* border radii */
+  --jobs-listing-card-radius:1rem;
+}
+
+/* header */
+.header {
+  background-color:var(--desaturated-dark-cyan);
+}
+
+/* main */
+.container {
+  max-width:var(--main-container-max-width);
+  padding:var(--main-container-padding);
+  margin-inline:auto;
+}
+
+/* job card */
+.job__listing__card {
+  padding:var(--jobs-listing-card-padding);
+  background-color:var(--white);
+  border-radius:var(--jobs-listing-card-radius);
+  position:relative;
+}
+
+.job__listing__card::before {
+  content:'';
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:4px;
+  background-color:var(--desaturated-dark-cyan);
+  border-top-left-radius:var(--jobs-listing-card-radius);
+  border-bottom-left-radius:var(--jobs-listing-card-radius);
+}
+
+.card__logo {
+  max-width:max-content;
+  position:absolute;
+  top:-50%;
+}
+
+.card__logo img{
+  width:60px;
+}
+
+
+
