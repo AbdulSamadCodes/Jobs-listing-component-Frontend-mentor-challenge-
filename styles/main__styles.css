@@ -3,6 +3,7 @@
   /* spacings */
   --main-container-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
   --jobs-listing-card-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
+  --card-content-section-gap:1.2rem;
 
   /* widths */
   --main-container-max-width:350px;
@@ -10,6 +11,10 @@
 
   /* border radii */
   --jobs-listing-card-radius:1rem;
+
+  /* typography */
+  --ff-company-name:1.8rem;
+  --ff-category-font-size:1.6rem;
 }
 
 /* header */
@@ -45,14 +50,56 @@
 }
 
 .card__logo {
+  --translate-y:calc(var(--card-logo-width) * -1);
+
   max-width:max-content;
   position:absolute;
-  top:-50%;
+  top:calc(var(--card-logo-width) / 2);
+  transform:translateY(var(--translate-y));
 }
 
 .card__logo img{
   width:60px;
 }
 
+.company__name {
+  font-size:var(--ff-company-name);
+  font-weight:700;
+  color:var(--desaturated-dark-cyan);
+}
 
+.card__content__section {
+  display:grid;
+  gap:var(--card-content-section-gap);
+}
 
+.company-wrapper {
+  --gap:1.5rem;
+
+  gap:var(--gap);
+}
+
+.category__wrapper {
+  --gap:0.8rem;
+
+  gap:var(--gap);
+}
+
+.category__span {
+  display:grid;
+  place-content:center;
+  font-size:var(--ff-category-font-size);
+  color:var(--white);
+  padding:.4rem 1rem;
+  border-radius:1.3rem;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.new-span {
+  background-color:var(--desaturated-dark-cyan);
+}
+
+.featured-span {
+  background-color:var(--very-dark-grayish-cyan);
+}

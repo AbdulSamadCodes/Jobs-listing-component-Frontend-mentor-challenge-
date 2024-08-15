@@ -61,5 +61,6 @@ html {
 
 body {
   background-color: var(--light-grayish-cyan-bg);
-  font-size: 1.5rem;
+  font-family:var(--ff-LeagueSpartan);
+  font-size: 1.6rem;
 }
