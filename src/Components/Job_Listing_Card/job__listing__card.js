@@ -15,7 +15,7 @@ class JobListingCard extends Component {
     this.component.appendChild(this.cardLogo);
 
     //card content section
-    this.cardContentSection = new CardContentSection('div','card__content__section',this.jobCardData).getComponent();
+    this.cardContentSection = new CardContentSection('div','card__content__section',{...this.jobCardData}).getComponent();
     this.component.appendChild(this.cardContentSection);
   }
 

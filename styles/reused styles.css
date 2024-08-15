@@ -1,0 +1,11 @@
+.card__content__section > *,
+.category__wrapper,
+.info-wrapper {
+  display:flex;
+  align-items:center;
+}
+
+.company__name,
+.category__span {
+  font-weight:700;
+}

@@ -3,7 +3,7 @@
   /* spacings */
   --main-container-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
   --jobs-listing-card-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
-  --card-content-section-gap:1.2rem;
+  --card-content-section-gap:1.5rem;
 
   /* widths */
   --main-container-max-width:350px;
@@ -15,6 +15,7 @@
   /* typography */
   --ff-company-name:1.8rem;
   --ff-category-font-size:1.6rem;
+  --ff-position-title:1.9rem;
 }
 
 /* header */
@@ -64,13 +65,14 @@
 
 .company__name {
   font-size:var(--ff-company-name);
-  font-weight:700;
   color:var(--desaturated-dark-cyan);
 }
 
 .card__content__section {
   display:grid;
   gap:var(--card-content-section-gap);
+  padding-block-end:var(--card-content-section-gap);
+  border-block-end:1px solid var(--dark-grayish-cyan);
 }
 
 .company-wrapper {
@@ -93,7 +95,6 @@
   padding:.4rem 1rem;
   border-radius:1.3rem;
   text-transform:uppercase;
-  font-weight:700;
 }
 
 .new-span {
@@ -102,4 +103,27 @@
 
 .featured-span {
   background-color:var(--very-dark-grayish-cyan);
+}
+
+.card__position__title {
+  color:var(--very-dark-grayish-cyan);
+  font-size:var(--ff-position-title);
+}
+
+.bullet-point {
+  width:5px;
+  aspect-ratio:1/1;
+  background-color:var(--dark-grayish-cyan);
+  border-radius:50%;
+}
+
+.info-wrapper {
+  --gap:1rem;
+
+  gap:var(--gap);
+}
+
+.info-span {
+  color:var(--dark-grayish-cyan);  
+  font-weight:600;
 }

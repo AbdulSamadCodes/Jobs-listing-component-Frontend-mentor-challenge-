@@ -15,7 +15,6 @@ export class CardLogo extends Component {
 
   getComponent() {
     this.createComponent();
-
     return this.component;
   }
 }
