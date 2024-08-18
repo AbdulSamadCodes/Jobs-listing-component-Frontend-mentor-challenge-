@@ -11,7 +11,7 @@ function updateHeaderImg() {
 }
 
 // function to handle the header mobile and desktop image
-function handleHeaderImg() {
+function handleHeaderImg() { 
   window.addEventListener("load",updateHeaderImg);
   window.addEventListener("resize",updateHeaderImg);
 }

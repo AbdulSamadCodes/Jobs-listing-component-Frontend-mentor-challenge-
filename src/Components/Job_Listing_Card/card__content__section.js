@@ -4,7 +4,7 @@ export class CardContentSection extends Component {
   #wrappersCount = 3;
   #categories = ['new', 'featured'];
   #candidatesInfo = {};
-
+  
   constructor(elementName, className, cardContent) {
     super(elementName, className);
     this.cardContent = cardContent;
