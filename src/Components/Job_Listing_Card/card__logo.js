@@ -18,4 +18,3 @@ export class CardLogo extends Component {
     return this.component;
   }
 }
-

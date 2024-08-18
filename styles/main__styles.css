@@ -1,129 +1,205 @@
 /* custom properties */
 :root {
   /* spacings */
-  --main-container-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
-  --jobs-listing-card-padding:calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
-  --card-content-section-gap:1.5rem;
+  --main-container-padding: calc((var(--card-logo-width) / 2) + 2rem) 2rem 2rem;
+  --jobs-listing-card-padding: calc((var(--card-logo-width) / 2) + 2rem) 2rem
+    2rem;
+  --card-content-section-gap: 1.8rem;
+  --tabs-wrapper-gap: 1.8rem;
+  --jobs-list-gap: 5rem;
 
   /* widths */
-  --main-container-max-width:350px;
-  --card-logo-width:60px;
+  --main-container-max-width: 350px;
+  --card-logo-width: 60px;
 
   /* border radii */
-  --jobs-listing-card-radius:1rem;
+  --jobs-listing-card-radius: 1rem;
 
   /* typography */
-  --ff-company-name:1.8rem;
-  --ff-category-font-size:1.6rem;
-  --ff-position-title:1.9rem;
+  --fs-company-name: 1.8rem;
+  --fs-category-font-size: 1.6rem;
+  --fs-position-title: 1.9rem;
+  --fs-search-tab: 1.7rem;
 }
 
 /* header */
 .header {
-  background-color:var(--desaturated-dark-cyan);
+  background-color: var(--desaturated-dark-cyan);
 }
 
 /* main */
 .container {
-  max-width:var(--main-container-max-width);
-  padding:var(--main-container-padding);
-  margin-inline:auto;
+  max-width: var(--main-container-max-width);
+  padding: var(--main-container-padding);
+  margin-inline: auto;
+}
+
+/* jobs card list */
+.jobs-cards-list {
+  display: grid;
+  gap: var(--jobs-list-gap);
 }
 
 /* job card */
 .job__listing__card {
-  padding:var(--jobs-listing-card-padding);
-  background-color:var(--white);
-  border-radius:var(--jobs-listing-card-radius);
-  position:relative;
+  position: relative;
+  padding: var(--jobs-listing-card-padding);
+  background-color: var(--white);
+  border-radius: var(--jobs-listing-card-radius);
+
+  box-shadow:0 4px 3px  hsla(0,0%,0%,0.2);
 }
 
 .job__listing__card::before {
-  content:'';
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  width:4px;
-  background-color:var(--desaturated-dark-cyan);
-  border-top-left-radius:var(--jobs-listing-card-radius);
-  border-bottom-left-radius:var(--jobs-listing-card-radius);
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+  background-color: var(--desaturated-dark-cyan);
+  border-top-left-radius: var(--jobs-listing-card-radius);
+  border-bottom-left-radius: var(--jobs-listing-card-radius);
 }
 
 .card__logo {
-  --translate-y:calc(var(--card-logo-width) * -1);
+  --translate-y: calc(var(--card-logo-width) * -1);
 
-  max-width:max-content;
-  position:absolute;
-  top:calc(var(--card-logo-width) / 2);
-  transform:translateY(var(--translate-y));
+  max-width: max-content;
+  position: absolute;
+  top: calc(var(--card-logo-width) / 2);
+  transform: translateY(var(--translate-y));
 }
 
-.card__logo img{
-  width:60px;
+.card__logo img {
+  width: var(--card-logo-width);
 }
 
 .company__name {
-  font-size:var(--ff-company-name);
-  color:var(--desaturated-dark-cyan);
+  font-size: var(--fs-company-name);
+  color: var(--desaturated-dark-cyan);
 }
 
 .card__content__section {
-  display:grid;
-  gap:var(--card-content-section-gap);
-  padding-block-end:var(--card-content-section-gap);
-  border-block-end:1px solid var(--dark-grayish-cyan);
+  display: grid;
+  gap: var(--card-content-section-gap);
+  padding-block-end: var(--card-content-section-gap);
+  border-block-end: 1px solid var(--dark-grayish-cyan);
 }
 
 .company-wrapper {
-  --gap:1.5rem;
+  --gap: 1.5rem;
 
-  gap:var(--gap);
+  gap: var(--gap);
 }
 
 .category__wrapper {
-  --gap:0.8rem;
+  --gap: 0.8rem;
 
-  gap:var(--gap);
+  gap: var(--gap);
 }
 
 .category__span {
-  display:grid;
-  place-content:center;
-  font-size:var(--ff-category-font-size);
-  color:var(--white);
-  padding:.4rem 1rem;
-  border-radius:1.3rem;
-  text-transform:uppercase;
+  display: grid;
+  place-content: center;
+  font-size: var(--fs-category-font-size);
+  color: var(--white);
+  padding: 0.4rem 1rem;
+  border-radius: 1.3rem;
+  text-transform: uppercase;
 }
 
 .new-span {
-  background-color:var(--desaturated-dark-cyan);
+  background-color: var(--desaturated-dark-cyan);
 }
 
 .featured-span {
-  background-color:var(--very-dark-grayish-cyan);
+  background-color: var(--very-dark-grayish-cyan);
 }
 
 .card__position__title {
-  color:var(--very-dark-grayish-cyan);
-  font-size:var(--ff-position-title);
+  color: var(--very-dark-grayish-cyan);
+  font-size: var(--fs-position-title);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.card__position__title:is(:hover, :focus) {
+  color: var(--desaturated-dark-cyan);
 }
 
 .bullet-point {
-  width:5px;
-  aspect-ratio:1/1;
-  background-color:var(--dark-grayish-cyan);
-  border-radius:50%;
+  width: 5px;
+  aspect-ratio: 1/1;
+  background-color: var(--dark-grayish-cyan);
+  border-radius: 50%;
 }
 
 .info-wrapper {
-  --gap:1rem;
+  --gap: 1rem;
 
-  gap:var(--gap);
+  gap: var(--gap);
 }
 
 .info-span {
-  color:var(--dark-grayish-cyan);  
-  font-weight:600;
+  color: var(--dark-grayish-cyan);
+  font-weight: 600;
+}
+
+.tabs__section {
+  padding-block-start: var(--card-content-section-gap);
+}
+
+.tabs__wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--tabs-wrapper-gap);
+  flex-wrap: wrap;
+}
+
+.search__tab {
+  font-size: var(--fs-search-tab);
+  padding: 0.8rem;
+  background-color: var(--light-grayish-cyan);
+  color: var(--desaturated-dark-cyan);
+  font-weight: 700;
+  border-radius: 0.3rem;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+.search__tab:is(:hover, :focus) {
+  background-color: var(--desaturated-dark-cyan);
+  color: var(--white);
+}
+
+/* media queries */
+
+@media (width > 768px) {
+  :root {
+    --main-container-max-width: 600px;
+  }
+}
+
+@media (width > 992px) {
+  :root {
+    --main-container-max-width: 900px;
+    --card-content-section-gap: 1.2rem;
+    --card-logo-width: 90px;
+    --jobs-list-gap: 8rem;
+
+    --fs-company-name: 2rem;
+    --fs-category-font-size: 1.8rem;
+    --fs-position-title: 2.3rem;
+  }
+
+  .job__listing__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card__content__section {
+    border-bottom: none;
+    padding-block-end: 0;
+  }
 }
