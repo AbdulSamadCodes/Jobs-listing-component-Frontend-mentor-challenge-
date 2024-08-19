@@ -6,8 +6,9 @@ export function removeExistingJobCards() {
   Array.from(jobsList.children).forEach(jobCard => jobCard.remove());
 }
 
-async function getJobsArray() {
+export default async function getJobsData() {
   const jobsDataArray = await fetchJobsData();
+
   renderJobListings(jobsDataArray);
 }
 
@@ -21,4 +22,4 @@ async function renderJobListings(jobsDataArray) {
   });
 }
 
-document.addEventListener("DOMContentLoaded",getJobsArray);
+document.addEventListener("DOMContentLoaded",getJobsData);
