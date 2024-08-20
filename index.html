@@ -35,23 +35,23 @@
     </main>
 
     <!-- scripts links -->
-    <script src="/src/Components/header.js"></script>
+    <script src="/src/Components/header.js" defer></script>
+    <script type="module" src="/src/Components/components.js" defer></script>
     <script
       type="module"
-      src="/src/Components/Job_Listing_Card/job__listing__card.js"
-    ></script>
-    <script type="module" src="/src/Components/components.js"></script>
-    <script
+      src="/src/Components/Job_Listing_Card/card__logo.js" defer
+      ></script>
+      <script
       type="module"
-      src="/src/Components/Job_Listing_Card/card__logo.js"
-    ></script>
-    <script
+      src="/src/Components/Job_Listing_Card/card__content__section.js" defer
+      ></script>
+      <script type="module" src="/src/Core/fetch__data.js" defer></script>
+      <script type="module" src="/src/Core/render__jobs__listings.js" defer></script>  
+      <script type="module" src="/src/Core/filter_job_listings.js" defer></script>  
+      <script
       type="module"
-      src="/src/Components/Job_Listing_Card/card__content__section.js"
-    ></script>
-    <script type="module" src="/src/Components/Tabs/tabs-component.js"></script>
-    <script type="module" src="/src/Core/fetch__data.js"></script>
-    <script type="module" src="/src/Core/render__jobs__listings.js"></script>  
-    <script type="module" src="/src/Core/filter_job_listings.js"></script>  
+      src="/src/Components/Job_Listing_Card/job__listing__card.js" 
+      ></script>
+      <script type="module" src="/src/Components/Tabs/tabs-component.js" defer></script>
   </body>
 </html>

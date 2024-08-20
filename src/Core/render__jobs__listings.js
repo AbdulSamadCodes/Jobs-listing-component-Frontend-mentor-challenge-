@@ -1,18 +1,18 @@
 import { JobListingCard } from "/src/Components/Job_Listing_Card/job__listing__card.js";
-import  fetchJobsData from "/src/Core/fetch__data.js";
+import fetchJobsData  from "/src/Core/fetch__data.js";
 
 export function removeExistingJobCards() {
   const jobsList = document.querySelector("[data-jobs-list]");  
   Array.from(jobsList.children).forEach(jobCard => jobCard.remove());
 }
 
-export default async function getJobsData() {
-  const jobsDataArray = await fetchJobsData();
-
+export default async function getJobsData(jobsDataArray) {
   renderJobListings(jobsDataArray);
+
+  return jobsDataArray;
 }
 
-async function renderJobListings(jobsDataArray) {
+export function renderJobListings(jobsDataArray) {
   const jobsList = document.querySelector("[data-jobs-list]");
 
   removeExistingJobCards();  
@@ -22,4 +22,4 @@ async function renderJobListings(jobsDataArray) {
   });
 }
 
-document.addEventListener("DOMContentLoaded",getJobsData);
+document.addEventListener("DOMContentLoaded",getJobsData(await fetchJobsData()));

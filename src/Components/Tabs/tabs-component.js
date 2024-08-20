@@ -1,4 +1,5 @@
 import { Component } from "/src/Components/components.js";
+import filterJobsCards  from "/src/Core/filter_job_listings.js";
 
 export class Tabs extends Component {
   #searchTabs = [];
@@ -26,7 +27,7 @@ export class Tabs extends Component {
       const searchTab = document.createElement("button");
       searchTab.classList.add("search__tab");
       searchTab.textContent = tabName;
-      searchTab.addEventListener('click',(eventObj) => filterJobCards(eventObj));
+      searchTab.addEventListener('click',(eventObj) => filterJobsCards(eventObj));
 
       this.tabsWrapper.appendChild(searchTab);
     });
